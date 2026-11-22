@@ -2,10 +2,6 @@
 
 Desarrollo end-to-end de una plataforma de comercio electrónico bajo una arquitectura monorepo, enfocada en la separación de responsabilidades, gestión ágil del estado y despliegue distribuido en la nube.
 
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
-
 ## 📑 Índice
 - [El Problema y la Motivación](#problema)
 - [Tech Stack y Arquitectura](#tech-stack)
@@ -14,8 +10,6 @@ Desarrollo end-to-end de una plataforma de comercio electrónico bajo una arquit
 - [Aprendizajes Clave y Roadmap](#aprendizajes)
 - [Visuales, Diagramas y Documentación Anexa](#visuales)
 - [Instalación y Ejecución Local](#instalacion)
-
-<a name="problema"></a>
 
 <a name="problema"></a>
 ## 🧠 El Problema y la Motivación
@@ -27,18 +21,18 @@ Se diseñó la aplicación estructurando el código base como un *monorepo*, per
 <a name="tech-stack"></a>
 ## 🏗️ Tech Stack y Arquitectura
 
-*   ![NodeJS](https://img.shields.io/badge/-Node.js_/_Express-43853D?style=flat-square&logo=node.js&logoColor=white) **Backend (Node.js & Express):** Provee una API RESTful stateless, encargada de la lógica de negocio, validaciones transaccionales y enrutamiento seguro de peticiones.
-*   ![React](https://img.shields.io/badge/-React_/_Next.js-20232A?style=flat-square&logo=react&logoColor=61DAFB) **Frontend (React & Next.js):** Capa de presentación reactiva con gestión de estado asíncrona para manejar el carrito de compras y el catálogo en tiempo real.
-*   ![MongoDB](https://img.shields.io/badge/-MongoDB_Atlas-4EA94B?style=flat-square&logo=mongodb&logoColor=white) **Persistencia (MongoDB):** Base de datos NoSQL documental, elegida por su flexibilidad estructural para manejar catálogos dinámicos de productos y evolución rápida de esquemas.
-*   ![Infra](https://img.shields.io/badge/-Render_&_Netlify-000000?style=flat-square) **Infraestructura Cloud:** Despliegue productivo distribuido utilizando Netlify para la entrega de contenido estático (Edge CDN) y Render para el tiempo de ejecución del servidor Node.js.
+*   **Backend (Node.js & Express):** Provee una API RESTful stateless, encargada de la lógica de negocio, validaciones transaccionales y enrutamiento seguro de peticiones.
+*   **Frontend (React):** Capa de presentación reactiva (Create React App) que maneja el carrito de compras y el catálogo.
+*   **Persistencia (MongoDB):** Base de datos NoSQL documental, elegida por su flexibilidad estructural para manejar catálogos dinámicos de productos y evolución rápida de esquemas.
+*   **Infraestructura Cloud:** Despliegue productivo distribuido utilizando Netlify para la entrega de contenido estático (Edge CDN) y Render para el tiempo de ejecución del servidor Node.js.
 
 <a name="features"></a>
 ## ⚡ Features Clave
 
 *   **Arquitectura Monorepo (NPM Workspaces):** Orquestación centralizada de dependencias y linting (ESLint, Prettier) garantizando uniformidad de código entre las capas de Frontend y Backend, a la vez que se ejecutan concurridamente en desarrollo.
-*   **Gestión Dinámica del E-Commerce:** Implementación completa del ciclo de vida comercial: ABM de productos, control de inventario, búsquedas filtradas y sistema de notificaciones asíncronas para el cliente.
-*   **Testing Automatizado:** Cobertura de la lógica crítica de negocio utilizando Jest para pruebas unitarias y Cypress para pruebas de integración End-to-End (E2E), asegurando la estabilidad del pipeline antes de producción.
-*   **Flujo de CI/CD Integrado:** Integración de repositorios mediante *GitHub Flow* con reglas estrictas de *Conventional Commits*, disparando despliegues automáticos (Webhooks) al fusionar features en la rama principal.
+*   **Gestión Dinámica del E-Commerce:** Implementación completa del ciclo de vida comercial: ABM de productos, control de inventario, búsquedas filtradas y notificaciones para el cliente.
+*   **Testing Automatizado:** Cobertura de la lógica crítica de negocio utilizando Jest para pruebas unitarias y Cypress para pruebas de integración End-to-End (E2E), para verificar el flujo de compra de punta a punta.
+*   **Flujo de entrega:** *GitHub Flow* con *Conventional Commits*; Netlify y Render redespliegan automáticamente al integrar cambios en la rama principal.
 
 <a name="versionado"></a>
 ## 🔄 Metodología de Versionado (GitFlow)
@@ -60,7 +54,7 @@ Para mantener un historial de control de versiones trazable y predecible, se apl
 ## 📈 Aprendizajes Clave y Roadmap
 
 *   **CORS y Orquestación Cloud:** Desplegar servicios en dominios físicamente distintos (Render y Netlify) subrayó la importancia de asegurar estrictamente las políticas de origen cruzado (CORS) y la inyección segura de variables de entorno de producción.
-*   **Escalabilidad de Estado en React:** Administrar el carrito de compras del lado del cliente me permitió optimizar el re-renderizado de componentes, centralizando el estado para evitar llamadas redundantes a la API.
+*   **Escalabilidad de Estado en React:** Administrar el carrito de compras del lado del cliente me permitió centralizar el estado y evitar llamadas redundantes a la API.
 
 <a name="visuales"></a>
 ## 🖼️ Visuales, Diagramas y Documentación Anexa
@@ -71,7 +65,7 @@ Para mantener un historial de control de versiones trazable y predecible, se apl
 
 ```mermaid
 graph LR
-    Frontend["fa:fa-laptop React / Next.js <br/> (Netlify CDN)"]
+    Frontend["fa:fa-laptop React <br/> (Netlify CDN)"]
     Backend["fa:fa-server Node.js / Express <br/> (Render)"]
     DB[("fa:fa-database MongoDB Atlas <br/> (NoSQL DB)")]
 
