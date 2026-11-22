@@ -32,7 +32,7 @@ Se diseñó la aplicación estructurando el código base como un *monorepo*, per
 *   **Arquitectura Monorepo (NPM Workspaces):** Orquestación centralizada de dependencias y linting (ESLint, Prettier) garantizando uniformidad de código entre las capas de Frontend y Backend, a la vez que se ejecutan concurridamente en desarrollo.
 *   **Gestión Dinámica del E-Commerce:** Implementación completa del ciclo de vida comercial: ABM de productos, control de inventario, búsquedas filtradas y notificaciones para el cliente.
 *   **Testing Automatizado:** Cobertura de la lógica crítica de negocio utilizando Jest para pruebas unitarias y Cypress para pruebas de integración End-to-End (E2E), para verificar el flujo de compra de punta a punta.
-*   **Flujo de entrega:** *GitHub Flow* con *Conventional Commits*; Netlify y Render redespliegan automáticamente al integrar cambios en la rama principal.
+*   **Flujo de entrega:** *GitHub Flow* con *Conventional Commits*; Render redespliega el backend automáticamente al integrar cambios en la rama principal, y el frontend se publica en Netlify con el build del cliente.
 
 <a name="versionado"></a>
 ## 🔄 Metodología de Versionado (GitFlow)
